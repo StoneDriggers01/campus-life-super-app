@@ -1,0 +1,92 @@
+header {
+  background-color: #733635;
+  text-align: center; 
+}
+.bisque {
+  color: bisque;
+}
+p {
+    text-align: center;
+}
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+h3 {
+  font-size: 25px;
+  text-align: center;
+}
+h4 {
+  font-size: 20px;
+  text-align: center;
+}
+.subheader {
+  font-weight: bold;
+  font-size: 20px;
+}
+.font-sans-serif {
+  font-family: sans-serif;
+}
+#footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+.button {
+  background-color: goldenrod;
+  color: black;
+  border: black;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  margin: 10px;
+}
+.button-container {
+  display: flex; /* Makes the container a flex container */
+  /* Optional properties for alignment and spacing */
+  justify-content: center; /* Centers the buttons horizontally */
+  gap: 10px; /* Adds space between buttons */
+  flex-wrap: wrap; /* Allows buttons to wrap to the next line if space is limited */
+}
+.grid-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+}
+#sections { 
+  width: 50%;
+  background-color: goldenrod;
+  border: 1px solid #733635; 
+  padding: 10px; 
+}
+#section_wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}*
+img {
+  width: 50%;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+}
+@media (max-width: 600px) {
+        #section_wrapper {
+          flex-direction: column;
+          align-items: center;
+        }
+}
+.custom-gold-font {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: goldenrod;
+}
+.custom-black-font {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: black;
+}
