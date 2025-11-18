@@ -85,6 +85,12 @@ img {
   font-weight: bold;
   color: goldenrod;
 }
+.custom-gold-subheader {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: goldenrod;
+  font-size: 20px;
+}
 .custom-black-font {
   font-family: 'Georgia', serif;
   font-weight: bold;
