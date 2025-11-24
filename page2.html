@@ -1,45 +1,61 @@
 <!DOCTYPE html>
-<html long="en">
-    <!--Language is English for screen readers.-->
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--Bootstrap-->
-        <title>Campus Life Super App</title> 
-        <!--Link to Bootstrap.-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <!--Link to the stylesheet called style.css.-->
-        <!--Color scheme for enhanced legibility and style.-->
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body>
-        <header class="text-center mb-4">
-        <h1 class = "custom-gold-font" >Erskine College</h1>
-        <p class = "custom-gold-subheader">Events Page</p>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <div class="button-container">
-            <a href="index.html" class = "button"> Home</a>
-            <a href="page3.html" class = "button"> Staff</a>
-            <a href="page4.html" class = "button"> Dining</a>
-            <a href="page5.html" class = "button"> Map</a>
-            <a href="page6.html" class = "button"> About</a>
-        </div>
-        </header>
-    </body>
-    <main>
-        <article>
-            <div class="container mt-4">
-            <section class="col-md-6 mb-4" id = "sections">
-                <h3 class = "subheader">Event Title</h3>
-                <img 
-                src = "img/event.jpg" 
-                alt = "Event Image" 
-                width = "50%"
-            >
-                <ul> 
-                    <li>Event Description</li> 
-                </ul>
-            </section>
-    <p>Copyright EC2025</p>
-    </main>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Life Super App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="text-center mb-4">
+    <h1 class="custom-gold-font">Erskine College</h1>
+    <p class="custom-gold-subheader">Events Page</p>
+    <div class="button-container">
+      <a href="index.html" class="button">Home</a>
+      <a href="page3.html" class="button">Staff</a>
+      <a href="page4.html" class="button">Dining</a>
+      <a href="page5.html" class="button">Map</a>
+      <a href="page6.html" class="button">About</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container mt-4">
+      <h2 class="custom-gold-subheader">Upcoming Events</h2>
+      <ul class="event-list" id="eventList"></ul>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const apiUrl = "https://www.erskine.edu/wp-json/tribe/events/v1/events";
+
+    async function loadEvents() {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        const eventList = document.getElementById("eventList");
+        eventList.innerHTML = "";
+
+        data.events.forEach(event => {
+          const li = document.createElement("li");
+          li.className = "event-item";
+          li.innerHTML = `
+            <h3>${event.title}</h3>
+            <p>${event.start_date}</p>
+            <p>${event.venue ? event.venue.venue : ""}</p>
+          `;
+          eventList.appendChild(li);
+        });
+      } catch (error) {
+        console.error("Error loading events:", error);
+      }
+    }
+
+    loadEvents();
+  </script>
+  <p>Copyright EC2025</p>
+</body>
 </html>

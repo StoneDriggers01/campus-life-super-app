@@ -97,7 +97,7 @@ img {
   color: black;
 }
 
-
+/*Multiple Slide Image*/
 
 * { box-sizing: border-box; }
     body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
@@ -157,3 +157,17 @@ img {
 .dots .active {
       background: #333;
     }
+
+    
+
+body { font-family: Arial, sans-serif; background: #f9f9f9; }
+    .event-list { max-width: 600px; margin: 40px auto; padding: 0; list-style: none; }
+    .event-item {
+      background: #fff;
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .event-item h3 { margin: 0 0 10px; }
+    .event-item p { margin: 0; color: #555; }
