@@ -171,3 +171,24 @@ body { font-family: Arial, sans-serif; background: #f9f9f9; }
     }
     .event-item h3 { margin: 0 0 10px; }
     .event-item p { margin: 0; color: #555; }
+
+  /* Custom styling for staff cards */
+    .staff-card {
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .staff-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .staff-card h5 {
+      color: #b8860b; /* gold accent */
+      margin-bottom: 0.5rem;
+    }
+    .staff-card p {
+      margin: 0;
+      color: #555;
+    }
